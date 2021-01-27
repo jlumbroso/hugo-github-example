@@ -1,4 +1,4 @@
-baseURL = "https://jlumbroso.github.io/hugo-gh-test/"
+baseURL = "https://jlumbroso.github.io/hugo-github-example/"
 languageCode = "en-us"
 title = "Noteworthy"
 theme = "noteworthy"
