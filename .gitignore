@@ -1,15 +1,15 @@
-# Binaries for programs and plugins
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
+# Created by https://www.toptal.com/developers/gitignore/api/hugo
+# Edit at https://www.toptal.com/developers/gitignore?templates=hugo
 
-# Test binary, built with `go test -c`
-*.test
+### Hugo ###
+# Generated files by hugo
+/public/
+/resources/_gen/
+hugo_stats.json
 
-# Output of the go coverage tool, specifically when used with LiteIDE
-*.out
+# Executable may be added to repository
+hugo.exe
+hugo.darwin
+hugo.linux
 
-# Dependency directories (remove the comment below to include it)
-# vendor/
+# End of https://www.toptal.com/developers/gitignore/api/hugo
