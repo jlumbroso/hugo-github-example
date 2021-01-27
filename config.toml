@@ -81,19 +81,19 @@ disqusShortname = ""
 [[menu.main]]
 	identifier = "about"
 	name = "About"
-	url = "/about/"
+	url = "about/"
 	weight = 1 # Weight is an integer used to sort the menu items. The sorting goes from smallest to largest numbers. If weight is not defined for each menu entry, Hugo will sort the entries alphabetically.
 
 [[menu.main]]
 	identifier = "tags"
 	name = "Tags"
-	url = "/tags/"
+	url = "tags/"
 	weight = 2
 
 [[menu.main]]
 	name = "Archives"
 	identifier = "archives"
-	url = "/archives/"
+	url = "archives/"
 	weight = 3
 
 # Privacy configurations: https://gohugo.io/about/hugo-and-gdpr/
