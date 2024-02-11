@@ -1,4 +1,4 @@
-name: GitHub Pages Build
+name: 🏗️ Build and Deploy GitHub Pages
 
 on:
   push:
@@ -7,24 +7,28 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
+      - name: 🔄 Check Out Source Repository
+        uses: actions/checkout@v3.5.1
         with:
           submodules: true # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+      - name: 🛠️ Initialize Hugo Environment
+        uses: peaceiris/actions-hugo@v2.6.0
         with:
-          hugo-version: "0.104.3"
+          hugo-version: "0.121.1"
           extended: true
 
-      - name: Build
-        run: hugo --minify
+      - name: 🏗️ Compile Hugo Static Files
+        run: hugo -D --gc --minify
 
-      - name: Deploy to gh-pages branch
-        uses: peaceiris/actions-gh-pages@v3
+      - name: 🔐 Secure Content with Encryption
+        run: curl -L -o hugo-encrypt "https://github.com/Izumiko/hugo-encrypt/releases/download/v0.1.0/hugo-encrypt-linux-64" && chmod 755 hugo-encrypt && ./hugo-encrypt
+
+      - name: 🚀 Publish to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3.9.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
@@ -32,3 +36,4 @@ jobs:
           user_email: "github-actions[bot]@users.noreply.github.com"
           ## NOTE: uncomment below if using a custom domain
           ## cname: mydomain.com
+          
